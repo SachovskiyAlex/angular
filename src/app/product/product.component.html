@@ -1,0 +1,86 @@
+<section class="catalog">
+  <div class="container">
+    <div class="catalog-header">
+      <h2 class="section-title">Смартфони Apple</h2>
+      <div class="filter-tabs">
+        <button class="tab active">Хіти продажів</button>
+        <button class="tab">iPhone 17 Pro</button>
+        <button class="tab">iPhone 16</button>
+        <button class="tab">Акції</button>
+      </div>
+    </div>
+
+    <div class="product-grid">
+      <div class="product-card" *ngFor="let item of products">
+        <div class="card-top">
+          <span class="badge now" *ngIf="item.isNew">НОВИНКА</span>
+          <span class="badge-hit" *ngIf="item.isHit">ХІТ</span>
+          <button class="compare-icon">
+            <img src="/ter.svg" alt="compare" />
+          </button>
+        </div>
+
+        <div class="product-img-wrapper">
+          <img
+            src="/{{ item.img }}"
+            alt="{{ item.title }}"
+            class="product-img"
+          />
+        </div>
+
+        <div class="product-info">
+          <h3 class="product-title">
+            {{ item.title }}
+          </h3>
+
+          <div class="specs-grid">
+            <div class="spec">
+              <span class="icon"><img src="/zip.svg" alt="zip" /></span>
+              {{ item.battery }}
+            </div>
+            <div class="spec">
+              <span class="icon"><img src="/zip.svg" alt="zip" /></span>
+              {{ item.cameraMain }} / {{ item.cameraFront }}
+            </div>
+            <div class="spec">
+              <span class="icon"><img src="/zip.svg" alt="zip" /></span>
+              {{ item.hdd }}
+            </div>
+            <div class="spec">
+              <span class="icon"><img src="/zip.svg" alt="zip" /></span>
+              {{ item.memorry }}
+            </div>
+          </div>
+
+          <div class="price-container">
+            <div class="price-wrapper">
+              <span class="old-price" *ngIf="item.priceWithDiscount"
+                >{{ item.price }} ₴</span
+              >
+              <span class="main-price" *ngIf="!item.priceWithDiscount"
+                >{{ item.price }} ₴</span
+              >
+              <span class="main-price" *ngIf="item.priceWithDiscount"
+                >{{ item.priceWithDiscount }} ₴</span
+              >
+            </div>
+            <div class="secondary-actions">
+              <button class="action-btn">
+                <img src="/shop.svg" alt="cart" />
+              </button>
+              <button class="action-btn">
+                <img src="/serr.svg" alt="wishlist" />
+              </button>
+            </div>
+          </div>
+
+          <button class="btn-buy-now">Купити в 1 клік</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="center-btn">
+      <button class="btn-show-all">Дивитись всі товари</button>
+    </div>
+  </div>
+</section>
