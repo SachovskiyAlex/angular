@@ -11,10 +11,10 @@
     </div>
 
     <div class="product-grid">
-      <div class="product-card" *ngFor="let item of products">
+      <div class="product-card" *ngFor="let product of products$ | async">
         <div class="card-top">
-          <span class="badge now" *ngIf="item.isNew">НОВИНКА</span>
-          <span class="badge-hit" *ngIf="item.isHit">ХІТ</span>
+          <span class="badge now" *ngIf="product.isNew">НОВИНКА</span>
+          <span class="badge-hit" *ngIf="product.isHit">ХІТ</span>
           <button class="compare-icon">
             <img src="/ter.svg" alt="compare" />
           </button>
@@ -22,46 +22,46 @@
 
         <div class="product-img-wrapper">
           <img
-            src="/{{ item.img }}"
-            alt="{{ item.title }}"
+            src="/{{ product.img }}"
+            alt="{{ product.title }}"
             class="product-img"
           />
         </div>
 
         <div class="product-info">
           <h3 class="product-title">
-            {{ item.title }}
+            {{ product.title }}
           </h3>
 
           <div class="specs-grid">
             <div class="spec">
               <span class="icon"><img src="/zip.svg" alt="zip" /></span>
-              {{ item.battery }}
+              {{ product.battery }}
             </div>
             <div class="spec">
               <span class="icon"><img src="/zip.svg" alt="zip" /></span>
-              {{ item.cameraMain }} / {{ item.cameraFront }}
+              {{ product.cameraMain }} / {{ product.cameraFront }}
             </div>
             <div class="spec">
               <span class="icon"><img src="/zip.svg" alt="zip" /></span>
-              {{ item.hdd }}
+              {{ product.hdd }}
             </div>
             <div class="spec">
               <span class="icon"><img src="/zip.svg" alt="zip" /></span>
-              {{ item.memorry }}
+              {{ product.memorry }}
             </div>
           </div>
 
           <div class="price-container">
             <div class="price-wrapper">
-              <span class="old-price" *ngIf="item.priceWithDiscount"
-                >{{ item.price }} ₴</span
+              <span class="old-price" *ngIf="product.priceWithDiscount"
+                >{{ product.price }} ₴</span
               >
-              <span class="main-price" *ngIf="!item.priceWithDiscount"
-                >{{ item.price }} ₴</span
+              <span class="main-price" *ngIf="!product.priceWithDiscount"
+                >{{ product.price }} ₴</span
               >
-              <span class="main-price" *ngIf="item.priceWithDiscount"
-                >{{ item.priceWithDiscount }} ₴</span
+              <span class="main-price" *ngIf="product.priceWithDiscount"
+                >{{ product.priceWithDiscount }} ₴</span
               >
             </div>
             <div class="secondary-actions">

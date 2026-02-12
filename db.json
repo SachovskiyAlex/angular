@@ -1,0 +1,112 @@
+{
+  "products": [
+    {
+      "id": "1",
+      "title": "iPhone 17 Pro Max",
+      "price": 70000,
+      "img": "products/17promax.avif",
+      "battery": "4850 мАч",
+      "memorry": "8 ГБ",
+      "hdd": "256 ГБ",
+      "cameraMain": "48 Мп ",
+      "cameraFront": "12 Мп",
+      "description": "Флагманська модель з найбільшою батареєю, титановим корпусом та професійною системою камер.",
+      "isNew": true
+    },
+    {
+      "id": "2",
+      "title": "iPhone 17 Pro",
+      "price": 65000,
+      "priceWithDiscount": 70000,
+      "img": "products/17pro.avif",
+      "battery": "4200 мАч",
+      "memorry": "8 ГБ",
+      "hdd": "256 ГБ",
+      "cameraMain": "48 Мп ",
+      "cameraFront": "12 Мп",
+      "description": "Потужна Pro-версія з просунутою камерою та преміальним дизайном.",
+      "isNew": true
+    },
+    {
+      "id": "3",
+      "title": "iPhone 17",
+      "price": 60200,
+      "priceWithDiscount": 65000,
+      "img": "products/17.avif",
+      "battery": "3900 мАч",
+      "memorry": "6 ГБ",
+      "hdd": "128 ГБ",
+      "cameraMain": "48 Мп ",
+      "cameraFront": "12 Мп",
+      "description": "Стандартна модель з потужним процесором та оновленою камерою.",
+      "isNew": true
+    },
+    {
+      "id": "4",
+      "title": "iPhone 17 Air",
+      "price": 68000,
+      "priceWithDiscount": 63000,
+      "img": "products/17air.avif",
+      "battery": "3700 мАч",
+      "memorry": "8 ГБ",
+      "hdd": "256 ГБ",
+      "cameraMain": "48 Мп ",
+      "cameraFront": "12 Мп",
+      "description": "Ультратонка модель з легким корпусом та збалансованими характеристиками.",
+      "isNew": true
+    },
+    {
+      "id": "5",
+      "title": "iPhone 16 Pro Max",
+      "price": 48000,
+      "img": "products/16promax.avif",
+      "battery": "4422 мАч",
+      "memorry": "8 ГБ",
+      "hdd": "256 ГБ",
+      "cameraMain": "48 Мп ",
+      "cameraFront": "12 Мп",
+      "description": "Флагман 16-ї серії з великою батареєю та топовою камерою.",
+      "isHit": true
+    },
+    {
+      "id": "6",
+      "title": "iPhone 16 Pro",
+      "price": 32000,
+      "img": "products/16pro.avif",
+      "battery": "3650 мАч",
+      "memorry": "8 ГБ",
+      "hdd": "128 ГБ",
+      "cameraMain": "48 Мп ",
+      "cameraFront": "12 Мп",
+      "description": "Компактна Pro-версія з професійною системою камер.",
+      "isHit": true
+    },
+    {
+      "id": "7",
+      "title": "iPhone 16",
+      "price": 28000,
+      "img": "products/16.avif",
+      "battery": "3561 мАч",
+      "memorry": "6 ГБ",
+      "hdd": "128 ГБ",
+      "cameraMain": "48 Мп ",
+      "cameraFront": "12 Мп",
+      "description": "Базова модель з чудовою продуктивністю та якісною камерою.",
+      "isHit": true
+    },
+    {
+      "id": "8",
+      "title": "iPhone 16 Plus",
+      "price": 35000,
+      "priceWithDiscount": 30000,
+      "img": "products/16plus.avif",
+      "battery": "4383 мАч",
+      "memorry": "6 ГБ",
+      "hdd": "256 ГБ",
+      "cameraMain": "48 Мп ",
+      "cameraFront": "12 Мп",
+      "description": "Модель з великим дисплеєм та покращеною автономністю.",
+      "isHit": true
+    }
+  ]
+}
