@@ -1,9 +1,22 @@
 import { Component } from '@angular/core';
+import { RouterLink, RouterLinkActive } from '@angular/router';
+import { NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-header',
   standalone: true,
+  imports: [RouterLink, RouterLinkActive, NgIf],
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss'],
+  styleUrl: './header.component.scss',
 })
-export class HeaderComponent {}
+export class HeaderComponent {
+  public isCatalogOpen = false;
+
+  public toggleCatalog(): void {
+    this.isCatalogOpen = !this.isCatalogOpen;
+  }
+
+  public closeCatalog(): void {
+    this.isCatalogOpen = false;
+  }
+}

@@ -10,4 +10,8 @@ export class ProductsService {
   public getList(): Observable<Product[]> {
     return this.apiService.get<Product[]>('products');
   }
+
+  public getById(id: string): Observable<Product> {
+    return this.apiService.get<Product>(`products/${id}`);
+  }
 }

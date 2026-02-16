@@ -1,3 +1,4 @@
+<app-promo-banner></app-promo-banner>
 <section class="catalog">
   <div class="container">
     <div class="catalog-header">
@@ -6,12 +7,17 @@
         <button class="tab active">Хіти продажів</button>
         <button class="tab">iPhone 17 Pro</button>
         <button class="tab">iPhone 16</button>
-        <button class="tab">Акції</button>
+        <button class="tab" routerLink="/sales">
+          <span>Акції</span>
+        </button>
       </div>
     </div>
 
-    <div class="product-grid">
-      <div class="product-card" *ngFor="let product of products$ | async">
+    <div class="product-grid" *ngIf="products$ | async as allProducts">
+      <div
+        class="product-card"
+        *ngFor="let product of allProducts.slice(0, displayLimit)"
+      >
         <div class="card-top">
           <span class="badge now" *ngIf="product.isNew">НОВИНКА</span>
           <span class="badge-hit" *ngIf="product.isHit">ХІТ</span>
@@ -20,17 +26,19 @@
           </button>
         </div>
 
-        <div class="product-img-wrapper">
-          <img
-            src="/{{ product.img }}"
-            alt="{{ product.title }}"
-            class="product-img"
-          />
-        </div>
+        <a [routerLink]="['/product', product.id]" class="product-img-link">
+          <div class="product-img-wrapper">
+            <img
+              src="/{{ product.img }}"
+              alt="{{ product.title }}"
+              class="product-img"
+            />
+          </div>
+        </a>
 
         <div class="product-info">
           <h3 class="product-title">
-            {{ product.title }}
+            <a [routerLink]="['/product', product.id]">{{ product.title }}</a>
           </h3>
 
           <div class="specs-grid">
@@ -79,8 +87,14 @@
       </div>
     </div>
 
-    <div class="center-btn">
-      <button class="btn-show-all">Дивитись всі товари</button>
+    <div class="center-btn" *ngIf="products$ | async as allProducts">
+      <button
+        class="btn-show-all"
+        (click)="showMore()"
+        *ngIf="displayLimit < allProducts.length"
+      >
+        Дивитись ще товари
+      </button>
     </div>
   </div>
 </section>

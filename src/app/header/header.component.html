@@ -1,28 +1,58 @@
 <header class="header">
   <div class="container header-content">
     <div class="header-top-mobile">
-      <h1 class="logo">TECH</h1>
+      <h1
+        class="logo"
+        routerLink="/"
+        (click)="closeCatalog()"
+        style="cursor: pointer"
+      >
+        TECH
+      </h1>
 
       <div class="mobile-actions">
         <a href="tel:+" class="mobile-phone-btn">
           <img src="/phone.svg" alt="phone" />
         </a>
-        <button class="mobile-menu-btn">
-          <span></span>
-          <span></span>
+        <button class="mobile-menu-btn" (click)="toggleCatalog()">
+          <ng-container *ngIf="!isCatalogOpen">
+            <span></span>
+            <span></span>
+          </ng-container>
+          <span *ngIf="isCatalogOpen" style="font-size: 24px; color: #6c5ce7"
+            >✕</span
+          >
         </button>
       </div>
 
-      <button class="catalog-btn desktop-only">
-        <span class="burger-icon">☰</span> Каталог
+      <button class="catalog-btn desktop-only" (click)="toggleCatalog()">
+        <span class="burger-icon">{{ isCatalogOpen ? "✕" : "☰" }}</span>
+        Каталог
       </button>
+
+      <div class="catalog-dropdown" *ngIf="isCatalogOpen">
+        <ul class="dropdown-list">
+          <li>
+            <a routerLink="/sales" (click)="closeCatalog()">
+              <img src="/shop.svg" alt="" class="icon" /> Знижки
+            </a>
+          </li>
+          <li>
+            <a routerLink="/" (click)="closeCatalog()">
+              <img src="/phone.svg" alt="" class="icon" /> Телефони
+            </a>
+          </li>
+          <li>
+            <a href="#" (click)="$event.preventDefault()">
+              <img src="/ter.svg" alt="" class="icon" /> Аксесуари
+            </a>
+          </li>
+        </ul>
+      </div>
     </div>
 
     <div class="header-center">
       <div class="search-wrapper">
-        <select class="search-select desktop-only">
-          <option>Вибір</option>
-        </select>
         <input type="text" placeholder="Шукати товар..." class="search-input" />
         <button class="search-btn">
           <img src="/lup2.svg" alt="search" />
@@ -31,8 +61,12 @@
     </div>
 
     <div class="header-right desktop-only">
-      <button class="cart-btn"><span>Акції</span></button>
-      <button class="cart-btn"><span>Контакти</span></button>
+      <button class="cart-btn" routerLink="/sales">
+        <span>Акції</span>
+      </button>
+      <button class="cart-btn" routerLink="/contacts">
+        <span>Контакти</span>
+      </button>
       <button class="icon-btn"><img src="/ter.svg" alt="compare" /></button>
       <button class="icon-btn"><img src="/Ser.svg" alt="wishlist" /></button>
       <button class="cart-btn">

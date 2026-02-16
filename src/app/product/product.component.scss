@@ -319,3 +319,23 @@ $hit-colornow: #75d14a;
     padding: 10px;
   }
 }
+
+.product-title {
+  margin: 15px 0;
+
+  a {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+    display: block;
+
+    &:hover {
+      color: #0071e3;
+    }
+  }
+}
+
+.product-img-link {
+  text-decoration: none;
+  display: block;
+}

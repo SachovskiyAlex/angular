@@ -9,6 +9,9 @@ export interface Product {
   hdd: string;
   cameraMain: string;
   cameraFront: string;
+  display: string;
+  color: string;
+  processor: string;
   isNew?: boolean;
   isHit?: boolean;
   description: string;

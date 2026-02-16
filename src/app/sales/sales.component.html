@@ -1,0 +1,70 @@
+<section class="catalog sales-page">
+  <div class="container">
+    <div class="catalog-header">
+      <h2 class="section-title">Акційні пропозиції</h2>
+    </div>
+
+    <div class="product-grid" *ngIf="salesProducts$ | async as products">
+      <div class="product-card" *ngFor="let product of products">
+        <div class="card-top">
+          <span class="badge sale">АКЦІЯ</span>
+          <button class="compare-icon">
+            <img src="/ter.svg" alt="compare" />
+          </button>
+        </div>
+
+        <a [routerLink]="['/product', product.id]" class="product-img-link">
+          <div class="product-img-wrapper">
+            <img
+              src="/{{ product.img }}"
+              alt="{{ product.title }}"
+              class="product-img"
+            />
+          </div>
+        </a>
+
+        <div class="product-info">
+          <h3 class="product-title">
+            <a [routerLink]="['/product', product.id]">{{ product.title }}</a>
+          </h3>
+
+          <div class="specs-grid">
+            <div class="spec">
+              <span class="icon"><img src="/zip.svg" alt="battery" /></span>
+              {{ product.battery }}
+            </div>
+            <div class="spec">
+              <span class="icon"><img src="/zip.svg" alt="camera" /></span>
+              {{ product.cameraMain }}
+            </div>
+            <div class="spec">
+              <span class="icon"><img src="/zip.svg" alt="storage" /></span>
+              {{ product.hdd }}
+            </div>
+          </div>
+
+          <div class="price-container">
+            <div class="price-wrapper">
+              <span class="old-price">{{ product.price }} ₴</span>
+              <span class="main-price sale-price"
+                >{{ product.priceWithDiscount }} ₴</span
+              >
+            </div>
+            <div class="secondary-actions">
+              <button class="action-btn">
+                <img src="/shop.svg" alt="cart" />
+              </button>
+            </div>
+          </div>
+
+          <button class="btn-buy-now">Купити зі знижкою</button>
+        </div>
+      </div>
+    </div>
+
+    <div *ngIf="(salesProducts$ | async)?.length === 0" class="empty-sales">
+      <p>Наразі активних акцій немає. Слідкуйте за оновленнями!</p>
+      <button routerLink="/" class="btn-show-all">На головну</button>
+    </div>
+  </div>
+</section>

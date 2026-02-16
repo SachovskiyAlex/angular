@@ -1,0 +1,78 @@
+<div class="container" *ngIf="product$ | async as product">
+  <a routerLink="/" class="back-link">← Назад до каталогу</a>
+
+  <div class="product-page">
+    <div class="product-left">
+      <div class="badges">
+        <span class="badge discount" *ngIf="product.priceWithDiscount">
+          -{{
+            Math.round(100 - (product.price * 100) / product.priceWithDiscount)
+          }}%
+        </span>
+        <span class="badge hit" *ngIf="product.isHit">Хіт</span>
+        <span
+          class="badge new"
+          *ngIf="product.isNew"
+          style="background: #00c853; color: white"
+          >Новинка</span
+        >
+      </div>
+      <img [src]="'/' + product.img" [alt]="product.title" />
+    </div>
+
+    <div class="product-right">
+      <div class="top-info">
+        <span class="product-code">Код товару: 000000{{ product.id }}</span>
+      </div>
+
+      <h1>Смартфон {{ product.title }}</h1>
+
+      <div class="price-section">
+        <div class="price-main">{{ product.price }} ₴</div>
+        <div class="price-old" *ngIf="product.priceWithDiscount">
+          {{ product.priceWithDiscount }} ₴
+        </div>
+      </div>
+
+      <div class="selection-block">
+        <p class="label">
+          Колір: <strong>{{ product.color }}</strong>
+        </p>
+        <div class="color-options">
+          <div class="color-circle active" [style.background]="'#1a1a1a'"></div>
+        </div>
+      </div>
+
+      <div class="specs">
+        <h3>Короткі характеристики:</h3>
+        <div class="specs-list">
+          <div class="spec-row">
+            <span class="label">Діагональ екрану</span>
+            <span class="value">{{ product.display }}</span>
+          </div>
+          <div class="spec-row">
+            <span class="label">Процесор</span>
+            <span class="value">{{ product.processor }}</span>
+          </div>
+          <div class="spec-row">
+            <span class="label">Пам'ять (RAM)</span>
+            <span class="value">{{ product.memorry }}</span>
+          </div>
+          <div class="spec-row">
+            <span class="label">Накопичувач</span>
+            <span class="value">{{ product.hdd }}</span>
+          </div>
+          <div class="spec-row">
+            <span class="label">Акумулятор</span>
+            <span class="value">{{ product.battery }}</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="actions">
+        <button class="buy-btn pink">Додати в кошик</button>
+        <button class="buy-btn blue">Купити зараз</button>
+      </div>
+    </div>
+  </div>
+</div>
