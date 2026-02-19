@@ -1,7 +1,7 @@
 import { Injectable, inject } from '@angular/core';
 import { ApiService } from './api.service';
 import { Product } from '../product/product.interface';
-import { Observable } from 'rxjs';
+import { Observable, map } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
 export class ProductsService {
@@ -13,5 +13,10 @@ export class ProductsService {
 
   public getById(id: string): Observable<Product> {
     return this.apiService.get<Product>(`products/${id}`);
+  }
+  public getSales(): Observable<Product[]> {
+    return this.apiService
+      .get<Product[]>('products/')
+      .pipe(map((products) => products.filter((p) => p.priceWithDiscount)));
   }
 }

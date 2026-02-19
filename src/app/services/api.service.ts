@@ -17,4 +17,5 @@ export class ApiService {
   public get<T>(path: string): Observable<T> {
     return this.http.get<T>(this.getFullPath(path));
   }
+  // TODO: add post, delete methods
 }

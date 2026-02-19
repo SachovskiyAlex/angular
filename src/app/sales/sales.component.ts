@@ -14,7 +14,5 @@ import { map } from 'rxjs';
 export class SalesComponent {
   private productsService = inject(ProductsService);
 
-  public salesProducts$ = this.productsService
-    .getList()
-    .pipe(map((products) => products.filter((p) => p.priceWithDiscount)));
+  public salesProducts$ = this.productsService.getSales();
 }

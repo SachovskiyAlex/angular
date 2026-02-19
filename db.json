@@ -334,5 +334,31 @@
       "description": "Легендарна модель, що досі актуальна.",
       "isHit": true
     }
+  ],
+  "shops": [
+    {
+      "id": "1",
+      "address": "15",
+      "sity": "Київ",
+      "street": "Хрещатик",
+      "phone": "+380 44 123 4567",
+      "email": "applestore@ukr.net"
+    },
+    {
+      "id": "2",
+      "address": "20",
+      "sity": "Львів",
+      "street": "Свободи",
+      "phone": "+380 32 023 4567",
+      "email": "sffas@ukr.net"
+    },
+    {
+      "id": "3",
+      "address": "5",
+      "sity": "Одеса",
+      "street": "Дерибасівська",
+      "phone": "+380 48 123 4867",
+      "email": "Apple@gmail.com"
+    }
   ]
 }

@@ -2,20 +2,24 @@
   <h1>Контакти</h1>
 
   <div class="contacts-grid">
-    <div class="contact-info">
+    <div class="contact-info" *ngFor="let contact of contacts">
       <div class="contact-item">
         <h3>Адреса</h3>
-        <p>м. Київ, вул. Хрещатик, 1</p>
+        <p>{{ contact.sity }}, {{ contact.street }} {{ contact.address }}</p>
       </div>
 
       <div class="contact-item">
         <h3>Телефон</h3>
-        <p><a href="tel:+380000000000">+38 (000) 000-00-00</a></p>
+        <p>
+          <a href="tel:+380000000000">{{ contact.phone }}</a>
+        </p>
       </div>
 
       <div class="contact-item">
         <h3>Email</h3>
-        <p><a href="mailto:info@tech.ua">infotech.ua</a></p>
+        <p>
+          <a href="mailto:info@tech.ua">{{ contact.email }}</a>
+        </p>
       </div>
 
       <div class="contact-item">

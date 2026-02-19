@@ -21,4 +21,5 @@ export class ProductComponent {
   public showMore(): void {
     this.displayLimit += 8;
   }
+  //TODO add filter by price, search by name
 }
