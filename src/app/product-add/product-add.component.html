@@ -1,0 +1,123 @@
+<div class="form-container">
+  <h1>Додати новий товар</h1>
+
+  <form [formGroup]="productForm" (ngSubmit)="onSubmit()" class="product-form">
+    <section class="form-section">
+      <h3>Основна інформація</h3>
+      <div class="grid">
+        <div class="form-group">
+          <label>Назва моделі *</label>
+          <input formControlName="title" placeholder="напр. iPhone 15 Pro" />
+        </div>
+        <div class="form-group">
+          <label>URL зображення *</label>
+          <input
+            formControlName="img"
+            placeholder="assets/products/iphone.png"
+          />
+        </div>
+        <div class="form-group">
+          <label>Ціна (грн) *</label>
+          <input type="number" formControlName="price" />
+        </div>
+        <div class="form-group">
+          <label>Ціна зі знижкою</label>
+          <input type="number" formControlName="priceWithDiscount" />
+        </div>
+      </div>
+    </section>
+
+    <section class="form-section">
+      <h3>Технічні характеристики</h3>
+      <div class="grid">
+        <div class="form-group">
+          <label>Процесор</label><input formControlName="processor" />
+        </div>
+        <div class="form-group">
+          <label>Пам'ять (RAM)</label><input formControlName="memorry" />
+        </div>
+        <div class="form-group">
+          <label>Накопичувач (ROM)</label><input formControlName="hdd" />
+        </div>
+        <div class="form-group">
+          <label>Акумулятор</label><input formControlName="battery" />
+        </div>
+        <div class="form-group">
+          <label>Дисплей</label><input formControlName="display" />
+        </div>
+        <div class="form-group">
+          <label>Колір</label><input formControlName="color" />
+        </div>
+        <div class="form-group">
+          <label>Основна камера</label><input formControlName="cameraMain" />
+        </div>
+        <div class="form-group">
+          <label>Фронтальна камера</label
+          ><input formControlName="cameraFront" />
+        </div>
+      </div>
+    </section>
+
+    <section class="form-section">
+      <div class="form-group full-width">
+        <label>Опис товару *</label>
+        <textarea formControlName="description" rows="4"></textarea>
+      </div>
+
+      <div class="checkbox-group">
+        <label><input type="checkbox" formControlName="isNew" /> Новинка</label>
+        <label
+          ><input type="checkbox" formControlName="isHit" /> Хіт продажів</label
+        >
+      </div>
+    </section>
+
+    <div class="actions">
+      <button type="button" (click)="productForm.reset()" class="btn-secondary">
+        Очистити
+      </button>
+      <button
+        type="submit"
+        [disabled]="productForm.invalid"
+        class="btn-primary"
+      >
+        Зберегти товар
+      </button>
+    </div>
+    <div class="form-container">
+      <h1>Керування товарами</h1>
+
+      <form
+        [formGroup]="productForm"
+        (ngSubmit)="onSubmit()"
+        class="product-form"
+      >
+        <div class="actions">
+          <button
+            type="submit"
+            [disabled]="productForm.invalid"
+            class="btn-primary"
+          >
+            Додати товар
+          </button>
+        </div>
+      </form>
+
+      <div class="management-section">
+        <h2>Існуючі товари ({{ products.length }})</h2>
+        <div class="product-list-admin">
+          <div *ngFor="let p of products" class="admin-item">
+            <img [src]="p.img" alt="" />
+            <div class="info">
+              <span class="title">{{ p.title }}</span>
+              <span class="price">{{ p.price }} грн</span>
+            </div>
+            <button (click)="deleteProduct(p.id)" class="btn-delete">
+              Видалити
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

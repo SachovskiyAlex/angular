@@ -318,21 +318,22 @@
       "isHit": false
     },
     {
-      "id": "20",
-      "title": "iPhone 11",
-      "price": 14000,
-      "priceWithDiscount": 16500,
+      "title": "Iphone 6s",
+      "price": 14332,
+      "priceWithDiscount": 10000,
       "img": "products/16plus.avif",
-      "display": "6.1\"",
-      "processor": "A13 Bionic",
-      "color": "Чорний",
-      "battery": "3110 мАч",
-      "memorry": "4 ГБ",
-      "hdd": "64 ГБ",
-      "cameraMain": "12 Мп",
-      "cameraFront": "12 Мп",
-      "description": "Легендарна модель, що досі актуальна.",
-      "isHit": true
+      "battery": "1222",
+      "memorry": "12",
+      "hdd": "12",
+      "cameraMain": "12",
+      "cameraFront": "12",
+      "display": "12",
+      "color": "Чорний ",
+      "processor": "dsa1",
+      "description": "Норм",
+      "isNew": false,
+      "isHit": true,
+      "id": "0IF37M7"
     }
   ],
   "shops": [

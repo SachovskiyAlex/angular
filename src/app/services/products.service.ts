@@ -11,12 +11,19 @@ export class ProductsService {
     return this.apiService.get<Product[]>('products');
   }
 
-  public getById(id: string): Observable<Product> {
+  public getById(id: number): Observable<Product> {
     return this.apiService.get<Product>(`products/${id}`);
   }
   public getSales(): Observable<Product[]> {
     return this.apiService
       .get<Product[]>('products/')
       .pipe(map((products) => products.filter((p) => p.priceWithDiscount)));
+  }
+  public deleteProduct(id: number): Observable<void> {
+    return this.apiService.delete<void>(`products/${id}`);
+  }
+
+  public addProduct(product: Product): Observable<Product> {
+    return this.apiService.post<Product>('products', product);
   }
 }

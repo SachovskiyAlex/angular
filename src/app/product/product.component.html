@@ -1,12 +1,17 @@
 <app-promo-banner></app-promo-banner>
+
 <section class="catalog">
   <div class="container">
     <div class="catalog-header">
       <h2 class="section-title">Смартфони Apple</h2>
+
       <div class="filter-tabs">
         <button class="tab active">Хіти продажів</button>
+
         <button class="tab">iPhone 17 Pro</button>
+
         <button class="tab">iPhone 16</button>
+
         <button class="tab" routerLink="/sales">
           <span>Акції</span>
         </button>
@@ -20,7 +25,9 @@
       >
         <div class="card-top">
           <span class="badge now" *ngIf="product.isNew">НОВИНКА</span>
+
           <span class="badge-hit" *ngIf="product.isHit">ХІТ</span>
+
           <button class="compare-icon">
             <img src="/ter.svg" alt="compare" />
           </button>
@@ -44,18 +51,25 @@
           <div class="specs-grid">
             <div class="spec">
               <span class="icon"><img src="/zip.svg" alt="zip" /></span>
+
               {{ product.battery }}
             </div>
+
             <div class="spec">
               <span class="icon"><img src="/zip.svg" alt="zip" /></span>
+
               {{ product.cameraMain }} / {{ product.cameraFront }}
             </div>
+
             <div class="spec">
               <span class="icon"><img src="/zip.svg" alt="zip" /></span>
+
               {{ product.hdd }}
             </div>
+
             <div class="spec">
               <span class="icon"><img src="/zip.svg" alt="zip" /></span>
+
               {{ product.memorry }}
             </div>
           </div>
@@ -65,17 +79,21 @@
               <span class="old-price" *ngIf="product.priceWithDiscount"
                 >{{ product.price }} ₴</span
               >
+
               <span class="main-price" *ngIf="!product.priceWithDiscount"
                 >{{ product.price }} ₴</span
               >
+
               <span class="main-price" *ngIf="product.priceWithDiscount"
                 >{{ product.priceWithDiscount }} ₴</span
               >
             </div>
+
             <div class="secondary-actions">
               <button class="action-btn">
                 <img src="/shop.svg" alt="cart" />
               </button>
+
               <button class="action-btn">
                 <img src="/serr.svg" alt="wishlist" />
               </button>

@@ -17,5 +17,16 @@ export class ApiService {
   public get<T>(path: string): Observable<T> {
     return this.http.get<T>(this.getFullPath(path));
   }
-  // TODO: add post, delete methods
+
+  public post<T>(path: string, body: any): Observable<T> {
+    return this.http.post<T>(this.getFullPath(path), body);
+  }
+
+  public delete<T>(path: string): Observable<T> {
+    return this.http.delete<T>(this.getFullPath(path));
+  }
+
+  public put<T>(path: string, body: any): Observable<T> {
+    return this.http.put<T>(this.getFullPath(path), body);
+  }
 }
