@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { NgIf } from '@angular/common';
+import { ProductsService } from '../services/products.service';
 
 @Component({
   selector: 'app-header',
@@ -18,5 +19,11 @@ export class HeaderComponent {
 
   public closeCatalog(): void {
     this.isCatalogOpen = false;
+  }
+  private productsService = inject(ProductsService);
+
+  onSearch(event: Event): void {
+    const value = (event.target as HTMLInputElement).value;
+    this.productsService.updateSearchQuery(value);
   }
 }

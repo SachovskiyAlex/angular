@@ -4,7 +4,24 @@
   <div class="container">
     <div class="catalog-header">
       <h2 class="section-title">Смартфони Apple</h2>
-
+      <div class="price-range-filter">
+        <span class="filter-label">Ціна:</span>
+        <div class="inputs-group">
+          <input
+            type="number"
+            [formControl]="minPriceControl"
+            placeholder="Від"
+            class="price-input"
+          />
+          <span class="divider">-</span>
+          <input
+            type="number"
+            [formControl]="maxPriceControl"
+            placeholder="До"
+            class="price-input"
+          />
+        </div>
+      </div>
       <div class="filter-tabs">
         <button class="tab active">Хіти продажів</button>
 

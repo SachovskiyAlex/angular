@@ -4,7 +4,7 @@ import { Subscription } from 'rxjs';
 import { Contact } from './contact.interface';
 import { NgFor, NgIf } from '@angular/common';
 import { SlicePipe } from '@angular/common';
-// Додаємо імпорти для форм
+
 import {
   FormBuilder,
   FormGroup,
@@ -15,22 +15,21 @@ import {
 @Component({
   selector: 'app-contacts',
   standalone: true,
-  // Додаємо ReactiveFormsModule та NgIf в imports
+
   imports: [NgFor, NgIf, ReactiveFormsModule, SlicePipe],
   templateUrl: './contacts.component.html',
   styleUrl: './contacts.component.scss',
 })
 export class ContactsComponent implements OnInit, OnDestroy {
   private contactService = inject(ContactService);
-  private fb = inject(FormBuilder); // Ін'єкція FormBuilder
+  private fb = inject(FormBuilder);
 
   public displayLimit = 8;
   public contacts: Contact[] = [];
-  public contactForm!: FormGroup; // Об'єкт форми
+  public contactForm!: FormGroup;
   private subscriptions = new Subscription();
 
   public ngOnInit(): void {
-    // Ініціалізація форми з валідацією
     this.contactForm = this.fb.group({
       name: ['', [Validators.required, Validators.minLength(3)]],
       email: ['', [Validators.required, Validators.email]],
@@ -54,9 +53,9 @@ export class ContactsComponent implements OnInit, OnDestroy {
   public onSubmit(): void {
     if (this.contactForm.valid) {
       console.log('Дані форми:', this.contactForm.value);
-      // Тут можна викликати метод сервісу для відправки повідомлення
+
       alert('Дякуємо! Ваше повідомлення відправлено.');
-      this.contactForm.reset(); // Очищення форми після успішної відправки
+      this.contactForm.reset();
     }
   }
 
