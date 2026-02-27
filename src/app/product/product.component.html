@@ -4,31 +4,25 @@
   <div class="container">
     <div class="catalog-header">
       <h2 class="section-title">Смартфони Apple</h2>
-      <div class="price-range-filter">
-        <span class="filter-label">Ціна:</span>
-        <div class="inputs-group">
-          <input
-            type="number"
-            [formControl]="minPriceControl"
-            placeholder="Від"
-            class="price-input"
-          />
-          <span class="divider">-</span>
-          <input
-            type="number"
-            [formControl]="maxPriceControl"
-            placeholder="До"
-            class="price-input"
-          />
+
+      <div class="filter-tabs" *ngIf="products$ | async as allProducts">
+        <button class="tab" (click)="setCategory(null)">Всі</button>
+        <button class="tab" (click)="setCategory('hit')">Хіти продажів</button>
+
+        <div class="dropdown">
+          <button class="tab dropdown-toggle">iPhone ▾</button>
+          <div class="dropdown-menu">
+            <button class="dropdown-item" (click)="setCategory('iPhone 17')">
+              iPhone 17
+            </button>
+            <button class="dropdown-item" (click)="setCategory('iPhone 16')">
+              iPhone 16
+            </button>
+            <button class="dropdown-item" (click)="setCategory('iPhone 15')">
+              iPhone 15
+            </button>
+          </div>
         </div>
-      </div>
-      <div class="filter-tabs">
-        <button class="tab active">Хіти продажів</button>
-
-        <button class="tab">iPhone 17 Pro</button>
-
-        <button class="tab">iPhone 16</button>
-
         <button class="tab" routerLink="/sales">
           <span>Акції</span>
         </button>
@@ -111,8 +105,13 @@
                 <img src="/shop.svg" alt="cart" />
               </button>
 
-              <button class="action-btn">
-                <img src="/serr.svg" alt="wishlist" />
+              <button class="action-btn" (click)="toggleWishlist(product)">
+                <img src="/serr.svg" alt="wishlist" *ngIf="!product.saved" />
+                <img
+                  src="/serrActive.svg"
+                  alt="wishlist"
+                  *ngIf="product.saved"
+                />
               </button>
             </div>
           </div>

@@ -31,7 +31,7 @@ export class ContactsComponent implements OnInit, OnDestroy {
 
   public ngOnInit(): void {
     this.contactForm = this.fb.group({
-      name: ['', [Validators.required, Validators.minLength(3)]],
+      name: [null, [Validators.required, Validators.minLength(3)]],
       email: ['', [Validators.required, Validators.email]],
       message: [
         '',
@@ -51,12 +51,20 @@ export class ContactsComponent implements OnInit, OnDestroy {
   }
 
   public onSubmit(): void {
-    if (this.contactForm.valid) {
-      console.log('Дані форми:', this.contactForm.value);
-
-      alert('Дякуємо! Ваше повідомлення відправлено.');
-      this.contactForm.reset();
+    if (!this.contactForm.valid) {
+      return;
     }
+    console.log('Дані форми:', this.contactForm.value);
+    this.contactService.saveContact(this.contactForm.value).subscribe(
+      () => {
+        alert('Дякуємо! Ваше повідомлення відправлено.');
+        this.contactForm.reset();
+      },
+      (error) => {
+        console.error('', error);
+        alert('');
+      },
+    );
   }
 
   public ngOnDestroy(): void {
@@ -66,5 +74,25 @@ export class ContactsComponent implements OnInit, OnDestroy {
 
   public showMore(): void {
     this.displayLimit += 8;
+  }
+  public getErrorMessage(controlName: string): string {
+    const control = this.contactForm.get(controlName);
+    if (control?.hasError('required')) {
+      return "Це поле обов'язкове";
+    }
+    if (control?.hasError('minlength')) {
+      return `Мінімальна довжина ${control.errors ? control.errors['minlength'].requiredLength : 0} символів`;
+    }
+    if (control?.hasError('maxlength')) {
+      return `Максимальна довжина ${control.errors ? control.errors['maxlength'].requiredLength : 0} символів`;
+    }
+    if (control?.hasError('email')) {
+      return 'Введіть коректний Email';
+    }
+    return '';
+  }
+  public hasError(controlName: string): boolean {
+    const control = this.contactForm.get(controlName);
+    return !!(control && control.invalid && (control.dirty || control.touched));
   }
 }

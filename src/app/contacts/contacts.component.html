@@ -28,8 +28,8 @@
 
         <div class="contact-item">
           <h3>Графік роботи</h3>
-          <p>Пн-Пт: 09:00 — 20:00</p>
-          <p>Сб-Нд: 10:00 — 18:00</p>
+          <p>{{ contact.scheduleDays }}</p>
+          <p>{{ contact.scheduleEnd }}</p>
         </div>
         <hr *ngIf="contacts.length > 1" />
       </div>
@@ -39,45 +39,41 @@
       <h3>Напишіть нам</h3>
       <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
         <div class="input-group">
-          <input type="text" formControlName="name" placeholder="Ваше ім'я" />
-          <small
-            class="error"
-            *ngIf="
-              contactForm.get('name')?.invalid &&
-              contactForm.get('name')?.touched
-            "
-          >
-            Ім'я має бути не менше 3 символів
+          <label for="name">Ваше ім'я*</label>
+          <input
+            type="text"
+            formControlName="name"
+            placeholder="Ваше ім'я"
+            id="name"
+          />
+          <small class="error" *ngIf="hasError('name')">
+            {{ getErrorMessage("name") }}
           </small>
         </div>
 
         <div class="input-group">
-          <input type="email" formControlName="email" placeholder="Email" />
-          <small
-            class="error"
-            *ngIf="
-              contactForm.get('email')?.invalid &&
-              contactForm.get('email')?.touched
-            "
-          >
-            Введіть коректний Email
+          <label for="email">Email*</label>
+          <input
+            type="email"
+            formControlName="email"
+            placeholder="Email"
+            id="email"
+          />
+          <small class="error" *ngIf="hasError('email')">
+            {{ getErrorMessage("email") }}
           </small>
         </div>
 
         <div class="input-group">
+          <label for="message">Повідомлення*</label>
           <textarea
             formControlName="message"
             placeholder="Ваше повідомлення"
             rows="5"
+            id="message"
           ></textarea>
-          <small
-            class="error"
-            *ngIf="
-              contactForm.get('message')?.invalid &&
-              contactForm.get('message')?.touched
-            "
-          >
-            Повідомлення має бути від 10 до 100 символів
+          <small class="error" *ngIf="hasError('message')">
+            {{ getErrorMessage("message") }}
           </small>
         </div>
 

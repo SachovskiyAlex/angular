@@ -15,4 +15,5 @@ export interface Product {
   isNew?: boolean;
   isHit?: boolean;
   description: string;
+  saved?: boolean;
 }

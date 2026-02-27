@@ -4,6 +4,7 @@ import { ProductDetailComponent } from './product-detail/product-detail.componen
 import { ContactsComponent } from './contacts/contacts.component';
 import { SalesComponent } from './sales/sales.component';
 import { ProductAddComponent } from './product-add/product-add.component';
+import { AuthComponent } from './auth/auth.component';
 
 export const routes: Routes = [
   { path: '', component: ProductComponent },
@@ -11,4 +12,5 @@ export const routes: Routes = [
   { path: 'contacts', component: ContactsComponent },
   { path: 'sales', component: SalesComponent },
   { path: 'add-product', component: ProductAddComponent },
+  { path: 'auth', component: AuthComponent },
 ];

@@ -5,4 +5,11 @@ export interface Contact {
   street: string;
   phone: string;
   email: string;
+  scheduleDays: string;
+  scheduleEnd: string;
+}
+export interface ContactForm {
+  name: string;
+  email: string;
+  message: string;
 }

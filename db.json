@@ -333,7 +333,7 @@
       "description": "Норм",
       "isNew": false,
       "isHit": true,
-      "id": "0IF37M7"
+      "id": "20"
     }
   ],
   "shops": [
@@ -343,7 +343,9 @@
       "sity": "Київ",
       "street": "Хрещатик",
       "phone": "+380 44 123 4567",
-      "email": "applestore@ukr.net"
+      "email": "applestore@ukr.net",
+      "scheduleDays": "Пн-Пт: 09:00 — 21:00",
+      "scheduleEnd": "Сб-Нд: 10:00 — 18:00"
     },
     {
       "id": "2",
@@ -351,7 +353,9 @@
       "sity": "Львів",
       "street": "Свободи",
       "phone": "+380 32 023 4567",
-      "email": "sffas@ukr.net"
+      "email": "sffas@ukr.net",
+      "scheduleDays": "Пн-Пт: 08:00 — 20:00",
+      "scheduleEnd": "Сб-Нд: 12:00 — 15:00"
     },
     {
       "id": "3",
@@ -359,7 +363,18 @@
       "sity": "Одеса",
       "street": "Дерибасівська",
       "phone": "+380 48 123 4867",
-      "email": "Apple@gmail.com"
+      "email": "Apple@gmail.com",
+      "scheduleDays": "Вт-Пт: 09:00 — 20:00",
+      "scheduleEnd": "Сб-Нд: 10:00 — 18:00"
     }
-  ]
+  ],
+  "contacts": [
+    {
+      "name": "dsgs",
+      "email": "sdgd@gmail.com",
+      "message": "Textttttttttttt",
+      "id": 1
+    }
+  ],
+  "wishlist": []
 }

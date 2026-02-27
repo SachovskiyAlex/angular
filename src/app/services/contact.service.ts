@@ -2,7 +2,7 @@ import { Injectable, inject } from '@angular/core';
 import { ApiService } from './api.service';
 import { Product } from '../product/product.interface';
 import { Observable, map } from 'rxjs';
-import { Contact } from '../contacts/contact.interface';
+import { Contact, ContactForm } from '../contacts/contact.interface';
 
 @Injectable({ providedIn: 'root' })
 export class ContactService {
@@ -10,5 +10,8 @@ export class ContactService {
 
   public getList(): Observable<Contact[]> {
     return this.apiService.get<Contact[]>('shops');
+  }
+  public saveContact(data: ContactForm): Observable<ContactForm> {
+    return this.apiService.post<ContactForm>('contacts', data);
   }
 }

@@ -35,4 +35,15 @@ export class ProductsService {
   public addProduct(product: Product): Observable<Product> {
     return this.apiService.post<Product>('products', product);
   }
+  public addToWishlist(productId: number): Observable<void> {
+    return this.apiService.post('wishlist', { id: productId });
+  }
+  public removeFromWishlist(productId: number): Observable<void> {
+    return this.apiService.delete(`wishlist/${productId}`);
+  }
+  public getWishlistIds(): Observable<string[]> {
+    return this.apiService
+      .get<{ id: number }[]>('wishlist')
+      .pipe(map((items) => items.map((item) => String(item.id))));
+  }
 }
