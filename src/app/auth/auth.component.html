@@ -6,7 +6,7 @@
         {{ isLoginMode ? "З поверненням!" : "Приєднуйтесь до нас сьогодні" }}
       </p>
     </div>
-
+    <div *ngIf="user">Успішно зареєстровано!</div>
     <form [formGroup]="authForm" (ngSubmit)="onSubmit()">
       <div class="form-group" *ngIf="!isLoginMode">
         <label>Ваше ім'я</label>

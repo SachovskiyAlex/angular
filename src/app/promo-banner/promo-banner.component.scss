@@ -1,15 +1,17 @@
 .promo-banner {
-  margin: 20px 0;
+  margin: 0px 0;
   padding: 41px 30px;
 
-  @media (max-width: 768px) {
-    padding: 10px;
-    margin: 10px 0;
+  .iphone-gradient {
+    background: radial-gradient(circle at center, #a6a9ff 0%, #6f73ee 100%);
+  }
+
+  .samsung-gradient {
+    background: radial-gradient(circle at center, #84fab0 0%, #11998e 100%);
   }
 
   .banner-inner {
     position: relative;
-    background: radial-gradient(circle at center, #a6a9ff 0%, #6f73ee 100%);
     border-radius: 10px;
     padding: 60px;
     min-height: 421px;
@@ -17,6 +19,7 @@
     align-items: center;
     color: white;
     overflow: hidden;
+    transition: background 0.5s ease-in-out;
 
     @media (max-width: 768px) {
       flex-direction: column;
@@ -72,7 +75,7 @@
 
 .cta-button {
   background: white;
-  color: #6f73ee;
+  color: #2c2e3e;
   border: none;
   padding: 15px 35px;
   border-radius: 8px;

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {
   FormBuilder,
@@ -6,6 +6,9 @@ import {
   Validators,
   ReactiveFormsModule,
 } from '@angular/forms';
+import { UsersService } from '../services/users.service';
+import { User, UserLogin } from './users.interface';
+import { switchMap, of } from 'rxjs';
 
 @Component({
   selector: 'app-auth',
@@ -15,8 +18,10 @@ import {
   styleUrl: './auth.component.scss',
 })
 export class AuthComponent {
-  isLoginMode = true;
-  authForm: FormGroup;
+  private userService = inject(UsersService);
+  public isLoginMode = true;
+  public authForm: FormGroup;
+  public user: User | null = null;
 
   constructor(private fb: FormBuilder) {
     this.authForm = this.initForm();
@@ -42,13 +47,34 @@ export class AuthComponent {
     nameControl?.updateValueAndValidity();
   }
 
-  onSubmit() {
-    if (this.authForm.valid) {
-      console.log('Дані форми:', this.authForm.value);
-      alert(this.isLoginMode ? 'Вхід успішний!' : 'Реєстрація успішна!');
-    } else {
-      this.markFormGroupTouched(this.authForm);
+  public onSubmit(): void {
+    if (!this.authForm.valid) {
+      return;
     }
+    console.log('Дані форми:', this.authForm.value);
+    const { email } = this.authForm.value;
+    this.userService
+      .getUserByEmail(email)
+      .pipe(
+        switchMap((user) => {
+          if (user) {
+            alert('Такий користувач існує. Виконуємо вхід.');
+            return of(null);
+          } else {
+            return this.userService.saveUser(this.authForm.value);
+          }
+        }),
+      )
+      .subscribe(
+        (user) => {
+          this.user = user;
+          this.authForm.reset();
+        },
+        (error) => {
+          console.error('', error);
+          alert('');
+        },
+      );
   }
 
   private markFormGroupTouched(formGroup: FormGroup) {

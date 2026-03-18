@@ -1,10 +1,12 @@
-$primary-purple: #6f73ee;
+$primary-purple: #2c2e3e;
 $bg-light: #f4f7f9;
 $border-color: #eceff2;
 $text-dark: #2c2e3e;
 
+/* src/app/header/header.component.scss */
+
 .header {
-  padding: 20px 0;
+  padding: 10px 0;
   border-bottom: 1px solid $border-color;
   background: white;
 
@@ -42,10 +44,14 @@ $text-dark: #2c2e3e;
 
   .logo {
     font-weight: bold;
-    font-size: 28px;
+    font-size: 32px;
     margin: 0;
     color: $text-dark;
     text-decoration: none;
+    font-family: "ComicRoasting", sans-serif;
+    text-transform: uppercase;
+    position: relative;
+    top: -4px;
   }
 }
 
@@ -367,7 +373,6 @@ $text-dark: #2c2e3e;
     }
   }
 }
-
 
 .mobile-menu-btn {
   display: flex;

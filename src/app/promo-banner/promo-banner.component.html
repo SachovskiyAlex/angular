@@ -1,25 +1,28 @@
 <section class="promo-banner">
-  <div class="container banner-inner">
+  <div class="container banner-inner" [ngClass]="banners[currentIndex].class">
     <div class="banner-info">
-      <span class="badge">Новинка</span>
-      <h2 class="title">IPHONE 17 PRO ВІД ОФІЦІЙНОГО ДИЛЕРА</h2>
-      <p class="subtitle">з безкоштовною доставкою по Україні від 1 дня</p>
+      <span class="badge">{{ banners[currentIndex].badge }}</span>
+      <h2 class="title">{{ banners[currentIndex].title }}</h2>
+      <p class="subtitle">{{ banners[currentIndex].subtitle }}</p>
 
       <button class="cta-button">Перейти в каталог</button>
     </div>
 
     <div class="banner-image">
-      <img src="/Apple17.png" alt="iPhone 17 Pro" />
+      <img
+        [src]="banners[currentIndex].image"
+        [alt]="banners[currentIndex].title"
+      />
     </div>
 
     <div class="banner-nav">
-      <button class="nav-arrow">‹</button>
+      <button class="nav-arrow" (click)="prevSlide()">‹</button>
       <div class="dots">
-        <span class="current">1</span>
+        <span class="current">{{ currentIndex + 1 }}</span>
         <span class="separator">—</span>
-        <span class="total">5</span>
+        <span class="total">{{ banners.length }}</span>
       </div>
-      <button class="nav-arrow">›</button>
+      <button class="nav-arrow" (click)="nextSlide()">›</button>
     </div>
   </div>
 </section>

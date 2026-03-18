@@ -4,7 +4,7 @@ $text-gray: #5d6c7b;
 $border-color: #eceff2;
 $bg-light: #f8f9fb;
 $hit-color: #ee6e6e;
-$hit-colornow: #75d14a;
+$hit-colornow: #11998e;
 
 .catalog {
   padding: 60px 0;
@@ -24,10 +24,11 @@ $hit-colornow: #75d14a;
   margin-bottom: 40px;
 
   .section-title {
-    font-size: 32px;
+    font-size: 28px;
     font-weight: 700;
     text-transform: uppercase;
     margin: 0;
+    color: $text-dark;
   }
 
   .filter-tabs {
@@ -443,4 +444,30 @@ $hit-colornow: #75d14a;
 .dropdown-toggle::after {
   content: "";
   margin-left: 5px;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 30px;
+
+  button {
+    width: 40px;
+    height: 40px;
+    border: 1px solid #ddd;
+    background: white;
+    cursor: pointer;
+    border-radius: 6px;
+
+    &.active {
+      background: #6f73ee;
+      color: white;
+      border-color: #6f73ee;
+    }
+
+    &:hover {
+      background: #f1f1f1;
+    }
+  }
 }

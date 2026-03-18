@@ -334,6 +334,150 @@
       "isNew": false,
       "isHit": true,
       "id": "20"
+    },
+    {
+      "title": "Iphone 6s Plus",
+      "price": 14332,
+      "priceWithDiscount": 10000,
+      "img": "products/16plus.avif",
+      "battery": "1222",
+      "memorry": "12",
+      "hdd": "12",
+      "cameraMain": "12",
+      "cameraFront": "12",
+      "display": "12",
+      "color": "Чорний ",
+      "processor": "dsa1",
+      "description": "Норм",
+      "isNew": false,
+      "isHit": true,
+      "id": "21"
+    },
+    {
+      "title": "Iphone 7",
+      "price": 14332,
+      "priceWithDiscount": 10000,
+      "img": "products/16plus.avif",
+      "battery": "1222",
+      "memorry": "12",
+      "hdd": "12",
+      "cameraMain": "12",
+      "cameraFront": "12",
+      "display": "12",
+      "color": "Чорний ",
+      "processor": "dsa1",
+      "description": "Норм",
+      "isNew": false,
+      "isHit": true,
+      "id": "22"
+    },
+    {
+      "title": "Iphone 7 Plus",
+      "price": 14332,
+      "priceWithDiscount": 10000,
+      "img": "products/16plus.avif",
+      "battery": "1222",
+      "memorry": "12",
+      "hdd": "12",
+      "cameraMain": "12",
+      "cameraFront": "12",
+      "display": "12",
+      "color": "Чорний ",
+      "processor": "dsa1",
+      "description": "Норм",
+      "isNew": false,
+      "isHit": true,
+      "id": 23
+    },
+    {
+      "title": "Iphone 8",
+      "price": 14332,
+      "priceWithDiscount": 10000,
+      "img": "products/16plus.avif",
+      "battery": "1222",
+      "memorry": "12",
+      "hdd": "12",
+      "cameraMain": "12",
+      "cameraFront": "12",
+      "display": "12",
+      "color": "Чорний ",
+      "processor": "dsa1",
+      "description": "Норм",
+      "isNew": false,
+      "isHit": true,
+      "id": 24
+    },
+    {
+      "title": "Iphone 8 Plus",
+      "price": 14332,
+      "priceWithDiscount": 10000,
+      "img": "products/16plus.avif",
+      "battery": "1222",
+      "memorry": "12",
+      "hdd": "12",
+      "cameraMain": "12",
+      "cameraFront": "12",
+      "display": "12",
+      "color": "Чорний ",
+      "processor": "dsa1",
+      "description": "Норм",
+      "isNew": false,
+      "isHit": true,
+      "id": 25
+    },
+    {
+      "title": "Iphone X",
+      "price": 14332,
+      "priceWithDiscount": 10000,
+      "img": "products/16plus.avif",
+      "battery": "1222",
+      "memorry": "12",
+      "hdd": "12",
+      "cameraMain": "12",
+      "cameraFront": "12",
+      "display": "12",
+      "color": "Чорний ",
+      "processor": "dsa1",
+      "description": "Норм",
+      "isNew": false,
+      "isHit": true,
+      "id": 26
+    },
+    {
+      "title": "Iphone XR",
+      "price": 14332,
+      "priceWithDiscount": 10000,
+      "img": "products/16plus.avif",
+      "battery": "1222",
+      "memorry": "12",
+      "hdd": "12",
+      "cameraMain": "12",
+      "cameraFront": "12",
+      "display": "12",
+      "color": "Чорний ",
+      "processor": "dsa1",
+      "description": "Норм",
+      "isNew": false,
+      "isHit": true,
+      "id": 27
+    },
+    {
+      "title": "Iphone XS",
+      "price": 14332,
+      "priceWithDiscount": 10000,
+      "img": "products/16plus.avif",
+      "battery": "1222",
+      "memorry": "12",
+      "hdd": "12",
+      "cameraMain": "12",
+      "cameraFront": "12",
+      "display": "12",
+      "color": "Чорний ",
+      "processor": "dsa1",
+      "description": "Норм",
+      "isNew": false,
+      "isHit": true,
+      "id": 28
     }
   ],
   "shops": [
@@ -376,5 +520,23 @@
       "id": 1
     }
   ],
-  "wishlist": []
+  "wishlist": [
+    {
+      "id": "2"
+    }
+  ],
+  "users": [
+    {
+      "name": "Test",
+      "email": "Test@gmail.com",
+      "password": "MTIzNDU2Nzg=",
+      "id": 1
+    },
+    {
+      "name": "Oleg",
+      "email": "Oleg@gmail.com",
+      "password": "MTIzNDU2Nzg=",
+      "id": 2
+    }
+  ]
 }

@@ -30,10 +30,7 @@
     </div>
 
     <div class="product-grid" *ngIf="products$ | async as allProducts">
-      <div
-        class="product-card"
-        *ngFor="let product of allProducts.slice(0, displayLimit)"
-      >
+      <div class="product-card" *ngFor="let product of allProducts">
         <div class="card-top">
           <span class="badge now" *ngIf="product.isNew">НОВИНКА</span>
 
@@ -121,13 +118,13 @@
       </div>
     </div>
 
-    <div class="center-btn" *ngIf="products$ | async as allProducts">
+    <div class="pagination" *ngIf="totalPages > 1">
       <button
-        class="btn-show-all"
-        (click)="showMore()"
-        *ngIf="displayLimit < allProducts.length"
+        *ngFor="let page of [].constructor(totalPages); let i = index"
+        (click)="changePage(i + 1)"
+        [class.active]="currentPageValue === i + 1"
       >
-        Дивитись ще товари
+        {{ i + 1 }}
       </button>
     </div>
   </div>
